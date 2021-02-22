@@ -2,7 +2,7 @@
 
 [Spring Boot](http://projects.spring.io/spring-boot/) app. it allow to filter overlapped events via REST API
 
-#Example
+# Example
 
 ```shell
 curl --location --request POST 'http://localhost:8080/event/overlapped' \
