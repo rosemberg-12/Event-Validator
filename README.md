@@ -1,6 +1,33 @@
 # springboot-event-validator
 
-Minimal [Spring Boot](http://projects.spring.io/spring-boot/) sample app.
+[Spring Boot](http://projects.spring.io/spring-boot/) app. it allow to filter overlapped events via REST API
+
+#Example
+
+```shell
+curl --location --request POST 'http://localhost:8080/event/overlapped' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "eventList": [
+        {
+            "id": "1",
+            "start": "2019-02-03 01:00:00",
+            "end": "2019-02-03 03:00:00"
+        },
+        {
+            "id": "2",
+            "start": "2019-02-03 02:00:00",
+            "end": "2019-02-03 03:00:00"
+        },
+        {
+            "id": "3",
+            "start": "2019-02-03 04:00:00",
+            "end": "2019-02-03 05:00:00"
+        }
+    ]
+}'
+```
+The events with ID 1 and 2 are overlapped, for that reason they will be returned 
 
 ## Requirements
 
